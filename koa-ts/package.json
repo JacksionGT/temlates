@@ -1,0 +1,33 @@
+{
+  "name": "koa-ts",
+  "version": "1.0.0",
+  "description": "这个项目支持使用koa构建web应用",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "dev:watch": "nodemon --exec \"tsx src/index.ts\" --watch src --ext ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/cors": "^5.0.0",
+    "@koa/router": "^13.1.0",
+    "dotenv": "^16.5.0",
+    "koa": "^3.0.0",
+    "koa-bodyparser": "^4.4.1",
+    "koa-static": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.15.0",
+    "@types/koa-bodyparser": "^4.3.12",
+    "@types/koa-static": "^4.0.4",
+    "@types/koa__cors": "^5.0.0",
+    "@types/koa__router": "^12.0.4",
+    "@types/node": "^24.0.3",
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.10",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}

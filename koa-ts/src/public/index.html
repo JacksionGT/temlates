@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一个Koa项目示例</title>
+    <style>
+        html,
+        body,
+        div {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>恭喜！Koa应用成功运行......</h1>
+        <div>
+            <hr>
+            <div>
+                <p>发送get请求</p>
+                <button onclick="get()">GET /api/test</button>
+                <div>
+                    <pre id="get-res"></pre>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <p>发送POST请求</p>
+                <button onclick="post()">POST /api/test</button>
+                <div>
+                    <pre id="post-res"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        async function get() {
+            const response = await fetch('/api/test');
+            const result = await response.text();
+            document.querySelector("#get-res").innerHTML = result;
+        }
+
+        async function post() {
+            const response = await fetch('/api/test', {
+                method: 'POST'
+            });
+            const result = await response.json();
+            document.querySelector("#post-res").innerHTML = JSON.stringify(result, null, 4);
+        }
+    </script>
+</body>
+
+</html>
